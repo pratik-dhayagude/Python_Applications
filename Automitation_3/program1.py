@@ -83,7 +83,7 @@ def main():
 			print("Directory name should be absoulte path")
 		else:
 				
-			schedule.every(10).seconds.do(CheakExtensitation,sys.argv[1])
+			schedule.every(1).minute.do(CheakExtensitation,sys.argv[1])
 			
 			
 			while(True):
