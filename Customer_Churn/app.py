@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from pathlib import Path
 
 st.set_page_config(page_title="Marvellous Infosystem DashBoard")
 
@@ -8,7 +9,10 @@ st.title("Marvellous Infosystem by Piyush Manohar Khirnar")
 st.header("Customer Churn Prediction")
 st.write("Machine Learnign Application Dashboard")
 
-model = joblib.load("Marvellous_ML_Customer_Churn.pkl")
+
+
+MODEL_PATH = Path(__file__).parent / "Marvellous_ML_Customer_Churn.pkl"
+model = joblib.load(MODEL_PATH)
 
 st.subheader("Enter Customer details")
 age = st.number_input("Customer Age:",min_value=1)
